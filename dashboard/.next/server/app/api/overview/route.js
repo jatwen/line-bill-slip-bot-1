@@ -1,0 +1,58 @@
+(()=>{var a={};a.id=647,a.ids=[647],a.modules={261:a=>{"use strict";a.exports=require("next/dist/shared/lib/router/utils/app-paths")},3295:a=>{"use strict";a.exports=require("next/dist/server/app-render/after-task-async-storage.external.js")},10846:a=>{"use strict";a.exports=require("next/dist/compiled/next-server/app-page.runtime.prod.js")},16825:(a,b,c)=>{"use strict";let d,{Pool:e}=c(42449);a.exports={query:async function(a,b=[]){return(function(){if(!d){let a=function(){let a=process.env.DATABASE_URL;if(!a)throw Error("DATABASE_URL is required for the dashboard");return a}();d=new e({connectionString:a,ssl:a.includes("sslmode=require")||a.includes("render.com")?{rejectUnauthorized:!1}:void 0})}return d})().query(a,b)}}},19121:a=>{"use strict";a.exports=require("next/dist/server/app-render/action-async-storage.external.js")},25950:a=>{"use strict";function b(a){return String(a).padStart(2,"0")}function c(a=new Date){return`${a.getFullYear()}-${b(a.getMonth()+1)}`}a.exports={getCurrentMonthKey:c,getMonthBounds:function(a=c()){let[d,e]=String(a).split("-").map(Number),f=new Date(Date.UTC(d,e-1,1)),g=new Date(Date.UTC(d,e,1));return{monthKey:`${d}-${b(e)}`,monthStart:f.toISOString().slice(0,10),nextMonthStart:g.toISOString().slice(0,10)}}}},29294:a=>{"use strict";a.exports=require("next/dist/server/app-render/work-async-storage.external.js")},34977:(a,b,c)=>{"use strict";c.r(b),c.d(b,{handler:()=>D,patchFetch:()=>C,routeModule:()=>y,serverHooks:()=>B,workAsyncStorage:()=>z,workUnitAsyncStorage:()=>A});var d={};c.r(d),c.d(d,{GET:()=>x,dynamic:()=>w});var e=c(95736),f=c(9117),g=c(4044),h=c(39326),i=c(32324),j=c(261),k=c(54290),l=c(85328),m=c(38928),n=c(46595),o=c(3421),p=c(17679),q=c(41681),r=c(63446),s=c(86439),t=c(51356),u=c(10641),v=c(58337);let w="force-dynamic";async function x(a){let{searchParams:b}=new URL(a.url);try{let a=await (0,v.getOverview)({userId:b.get("userId"),month:b.get("month")});return u.NextResponse.json(a)}catch(a){return u.NextResponse.json({error:a.message},{status:500})}}let y=new e.AppRouteRouteModule({definition:{kind:f.RouteKind.APP_ROUTE,page:"/api/overview/route",pathname:"/api/overview",filename:"route",bundlePath:"app/api/overview/route"},distDir:".next",relativeProjectDir:"",resolvedPagePath:"C:\\Users\\JatuwutWengthaisong\\Pictures\\iphone\\line-bill-slip-bot\\dashboard\\app\\api\\overview\\route.js",nextConfigOutput:"",userland:d}),{workAsyncStorage:z,workUnitAsyncStorage:A,serverHooks:B}=y;function C(){return(0,g.patchFetch)({workAsyncStorage:z,workUnitAsyncStorage:A})}async function D(a,b,c){var d;let e="/api/overview/route";"/index"===e&&(e="/");let g=await y.prepare(a,b,{srcPage:e,multiZoneDraftMode:!1});if(!g)return b.statusCode=400,b.end("Bad Request"),null==c.waitUntil||c.waitUntil.call(c,Promise.resolve()),null;let{buildId:u,params:v,nextConfig:w,isDraftMode:x,prerenderManifest:z,routerServerContext:A,isOnDemandRevalidate:B,revalidateOnlyGenerated:C,resolvedPathname:D}=g,E=(0,j.normalizeAppPath)(e),F=!!(z.dynamicRoutes[E]||z.routes[D]);if(F&&!x){let a=!!z.routes[D],b=z.dynamicRoutes[E];if(b&&!1===b.fallback&&!a)throw new s.NoFallbackError}let G=null;!F||y.isDev||x||(G="/index"===(G=D)?"/":G);let H=!0===y.isDev||!F,I=F&&!H,J=a.method||"GET",K=(0,i.getTracer)(),L=K.getActiveScopeSpan(),M={params:v,prerenderManifest:z,renderOpts:{experimental:{cacheComponents:!!w.experimental.cacheComponents,authInterrupts:!!w.experimental.authInterrupts},supportsDynamicResponse:H,incrementalCache:(0,h.getRequestMeta)(a,"incrementalCache"),cacheLifeProfiles:null==(d=w.experimental)?void 0:d.cacheLife,isRevalidate:I,waitUntil:c.waitUntil,onClose:a=>{b.on("close",a)},onAfterTaskError:void 0,onInstrumentationRequestError:(b,c,d)=>y.onRequestError(a,b,d,A)},sharedContext:{buildId:u}},N=new k.NodeNextRequest(a),O=new k.NodeNextResponse(b),P=l.NextRequestAdapter.fromNodeNextRequest(N,(0,l.signalFromNodeResponse)(b));try{let d=async c=>y.handle(P,M).finally(()=>{if(!c)return;c.setAttributes({"http.status_code":b.statusCode,"next.rsc":!1});let d=K.getRootSpanAttributes();if(!d)return;if(d.get("next.span_type")!==m.BaseServerSpan.handleRequest)return void console.warn(`Unexpected root span type '${d.get("next.span_type")}'. Please report this Next.js issue https://github.com/vercel/next.js`);let e=d.get("next.route");if(e){let a=`${J} ${e}`;c.setAttributes({"next.route":e,"http.route":e,"next.span_name":a}),c.updateName(a)}else c.updateName(`${J} ${a.url}`)}),g=async g=>{var i,j;let k=async({previousCacheEntry:f})=>{try{if(!(0,h.getRequestMeta)(a,"minimalMode")&&B&&C&&!f)return b.statusCode=404,b.setHeader("x-nextjs-cache","REVALIDATED"),b.end("This page could not be found"),null;let e=await d(g);a.fetchMetrics=M.renderOpts.fetchMetrics;let i=M.renderOpts.pendingWaitUntil;i&&c.waitUntil&&(c.waitUntil(i),i=void 0);let j=M.renderOpts.collectedTags;if(!F)return await (0,o.I)(N,O,e,M.renderOpts.pendingWaitUntil),null;{let a=await e.blob(),b=(0,p.toNodeOutgoingHttpHeaders)(e.headers);j&&(b[r.NEXT_CACHE_TAGS_HEADER]=j),!b["content-type"]&&a.type&&(b["content-type"]=a.type);let c=void 0!==M.renderOpts.collectedRevalidate&&!(M.renderOpts.collectedRevalidate>=r.INFINITE_CACHE)&&M.renderOpts.collectedRevalidate,d=void 0===M.renderOpts.collectedExpire||M.renderOpts.collectedExpire>=r.INFINITE_CACHE?void 0:M.renderOpts.collectedExpire;return{value:{kind:t.CachedRouteKind.APP_ROUTE,status:e.status,body:Buffer.from(await a.arrayBuffer()),headers:b},cacheControl:{revalidate:c,expire:d}}}}catch(b){throw(null==f?void 0:f.isStale)&&await y.onRequestError(a,b,{routerKind:"App Router",routePath:e,routeType:"route",revalidateReason:(0,n.c)({isRevalidate:I,isOnDemandRevalidate:B})},A),b}},l=await y.handleResponse({req:a,nextConfig:w,cacheKey:G,routeKind:f.RouteKind.APP_ROUTE,isFallback:!1,prerenderManifest:z,isRoutePPREnabled:!1,isOnDemandRevalidate:B,revalidateOnlyGenerated:C,responseGenerator:k,waitUntil:c.waitUntil});if(!F)return null;if((null==l||null==(i=l.value)?void 0:i.kind)!==t.CachedRouteKind.APP_ROUTE)throw Object.defineProperty(Error(`Invariant: app-route received invalid cache entry ${null==l||null==(j=l.value)?void 0:j.kind}`),"__NEXT_ERROR_CODE",{value:"E701",enumerable:!1,configurable:!0});(0,h.getRequestMeta)(a,"minimalMode")||b.setHeader("x-nextjs-cache",B?"REVALIDATED":l.isMiss?"MISS":l.isStale?"STALE":"HIT"),x&&b.setHeader("Cache-Control","private, no-cache, no-store, max-age=0, must-revalidate");let m=(0,p.fromNodeOutgoingHttpHeaders)(l.value.headers);return(0,h.getRequestMeta)(a,"minimalMode")&&F||m.delete(r.NEXT_CACHE_TAGS_HEADER),!l.cacheControl||b.getHeader("Cache-Control")||m.get("Cache-Control")||m.set("Cache-Control",(0,q.getCacheControlHeader)(l.cacheControl)),await (0,o.I)(N,O,new Response(l.value.body,{headers:m,status:l.value.status||200})),null};L?await g(L):await K.withPropagatedContext(a.headers,()=>K.trace(m.BaseServerSpan.handleRequest,{spanName:`${J} ${a.url}`,kind:i.SpanKind.SERVER,attributes:{"http.method":J,"http.target":a.url}},g))}catch(b){if(b instanceof s.NoFallbackError||await y.onRequestError(a,b,{routerKind:"App Router",routePath:E,routeType:"route",revalidateReason:(0,n.c)({isRevalidate:I,isOnDemandRevalidate:B})}),F)throw b;return await (0,o.I)(N,O,new Response(null,{status:500})),null}}},42449:a=>{"use strict";a.exports=require("pg")},44870:a=>{"use strict";a.exports=require("next/dist/compiled/next-server/app-route.runtime.prod.js")},58337:(a,b,c)=>{"use strict";let{query:d}=c(16825),{getCurrentMonthKey:e,getMonthBounds:f}=c(25950),{resolveUserId:g}=c(74988);a.exports={getOverview:async function a({userId:b,month:c}={}){let h=await g(b),i=f(c||e());if(!h)return{userId:null,month:i.monthKey,totalExpense:0,todayExpense:0,transactionCount:0,totalBudget:0,remainingBudget:0,spendingByCategory:[],topShops:[],dailyTrend:[],latestSync:null};let j=[h,i.monthStart,i.nextMonthStart],[k,l,m,n,o]=await Promise.all([d(`SELECT
+         COALESCE(SUM(amount), 0) AS total_expense,
+         COUNT(*)::int AS transaction_count,
+         COALESCE(SUM(amount) FILTER (WHERE transaction_date = CURRENT_DATE), 0) AS today_expense
+       FROM transactions
+       WHERE user_id = $1
+         AND transaction_date >= $2
+         AND transaction_date < $3
+         AND status = 'confirmed'
+         AND expense_type = 'expense'`,j),d(`SELECT COALESCE(c.name, t.category_text, 'Other') AS category_name,
+              COALESCE(SUM(t.amount), 0) AS total_amount
+       FROM transactions t
+       LEFT JOIN categories c ON c.id = t.category_id
+       WHERE t.user_id = $1
+         AND t.transaction_date >= $2
+         AND t.transaction_date < $3
+         AND t.status = 'confirmed'
+         AND t.expense_type = 'expense'
+       GROUP BY COALESCE(c.name, t.category_text, 'Other')
+       ORDER BY total_amount DESC
+       LIMIT 8`,j),d(`SELECT COALESCE(shop_or_bank_name, '-') AS shop_name,
+              COALESCE(SUM(amount), 0) AS total_amount,
+              COUNT(*)::int AS transaction_count
+       FROM transactions
+       WHERE user_id = $1
+         AND transaction_date >= $2
+         AND transaction_date < $3
+         AND status = 'confirmed'
+         AND expense_type = 'expense'
+       GROUP BY COALESCE(shop_or_bank_name, '-')
+       ORDER BY total_amount DESC
+       LIMIT 5`,j),d(`SELECT transaction_date::text AS date,
+              COALESCE(SUM(amount), 0) AS total_amount
+       FROM transactions
+       WHERE user_id = $1
+         AND transaction_date >= $2
+         AND transaction_date < $3
+         AND status = 'confirmed'
+         AND expense_type = 'expense'
+       GROUP BY transaction_date
+       ORDER BY transaction_date`,j),d(`SELECT status, finished_at, rows_read, rows_inserted, rows_updated, error_message
+       FROM sync_runs
+       ORDER BY started_at DESC
+       LIMIT 1`)]),p=await d(`SELECT COALESCE(SUM(plan_amount), 0) AS total_budget
+     FROM budget_plans
+     WHERE user_id = $1
+       AND plan_month = $2
+       AND status = 'active'`,[h,i.monthStart]),q=Number(k.rows[0]?.total_expense||0),r=Number(p.rows[0]?.total_budget||0);return{userId:h,month:i.monthKey,totalExpense:q,todayExpense:Number(k.rows[0]?.today_expense||0),transactionCount:Number(k.rows[0]?.transaction_count||0),totalBudget:r,remainingBudget:r-q,spendingByCategory:l.rows.map(a=>({categoryName:a.category_name,totalAmount:Number(a.total_amount||0)})),topShops:m.rows.map(a=>({shopName:a.shop_name,totalAmount:Number(a.total_amount||0),transactionCount:Number(a.transaction_count||0)})),dailyTrend:n.rows.map(a=>({date:a.date,totalAmount:Number(a.total_amount||0)})),latestSync:o.rows[0]||null}}}},63033:a=>{"use strict";a.exports=require("next/dist/server/app-render/work-unit-async-storage.external.js")},74988:(a,b,c)=>{"use strict";let{query:d}=c(16825);a.exports={getUsers:async function(){return(await d(`SELECT id, line_user_id, COALESCE(display_name, line_user_id) AS display_name
+     FROM app_users
+     WHERE is_active = TRUE
+     ORDER BY updated_at DESC, id DESC`)).rows},resolveUserId:async function(a){if(a){let b=await d(`SELECT id
+       FROM app_users
+       WHERE id::text = $1 OR line_user_id = $1
+       LIMIT 1`,[String(a)]);return b.rows[0]?.id||null}let b=await d(`SELECT id
+     FROM app_users
+     WHERE is_active = TRUE
+     ORDER BY updated_at DESC, id DESC
+     LIMIT 1`);return b.rows[0]?.id||null}}},78335:()=>{},86439:a=>{"use strict";a.exports=require("next/dist/shared/lib/no-fallback-error.external")},96487:()=>{}};var b=require("../../../webpack-runtime.js");b.C(a);var c=b.X(0,[331,692],()=>b(b.s=34977));module.exports=c})();

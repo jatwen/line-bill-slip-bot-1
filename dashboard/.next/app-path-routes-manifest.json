@@ -1,0 +1,7 @@
+{
+  "/_not-found/page": "/_not-found",
+  "/api/budget/route": "/api/budget",
+  "/api/overview/route": "/api/overview",
+  "/page": "/",
+  "/budget/page": "/budget"
+}
